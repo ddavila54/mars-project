@@ -1,15 +1,15 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: sample-app
+  name: mars-rover
   namespace: argocd
 spec:
   destination:
-    namespace: sample-app
+    namespace: mars-rover
     server: https://kubernetes.default.svc
-  project: sample-project
+  project: mars-rover
   source:
-    path: sample-app/
+    path: mars-rover/
     repoURL: https://github.com/ddavila54/mars-project
     targetRevision: HEAD
   syncPolicy:
